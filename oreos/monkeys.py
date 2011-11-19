@@ -252,7 +252,7 @@ class CookieError(Exception):
 #       _LegalChars       is the list of chars which don't require "'s
 #       _Translator       hash-table for fast quoting
 #
-_LegalChars       = string.ascii_letters + string.digits + "!#$%&'*+-.^_`|~"
+_LegalChars       = string.ascii_letters + string.digits + "!#$%&'*+-.^_`|~[]_"
 _Translator       = {
     '\000' : '\\000',  '\001' : '\\001',  '\002' : '\\002',
     '\003' : '\\003',  '\004' : '\\004',  '\005' : '\\005',
@@ -537,7 +537,7 @@ class Morsel(dict):
 # result, the parsing rules here are less strict.
 #
 
-_LegalCharsPatt  = r"[\w\d!#%&'~_`><@,:/\$\*\+\-\.\^\|\)\(\?\}\{\=]"
+_LegalCharsPatt  = r"[\w\d!#%&'~_`><@,:/\$\*\+\-\.\^\|\)\(\?\}\{\=\[\]\_]"
 
 _CookiePattern = re.compile(
     r"(?x)"                       # This is a Verbose pattern
