@@ -635,6 +635,7 @@ class BaseCookie(dict):
         """Load cookies from a string (presumably HTTP_COOKIE) or
         from a dictionary.  Loading cookies from a dictionary 'd'
         is equivalent to calling:
+        
             map(Cookie.__setitem__, d.keys(), d.values())
         """
         if type(rawdata) == type(""):
